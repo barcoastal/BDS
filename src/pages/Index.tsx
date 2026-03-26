@@ -1,16 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import SiteHeader from "@/components/SiteHeader";
+import HeroSection from "@/components/HeroSection";
+import CashFlowTrapSection from "@/components/CashFlowTrapSection";
+import DebtTypesSection from "@/components/DebtTypesSection";
+import SolutionsSection from "@/components/SolutionsSection";
+import CrisisGuideSection from "@/components/CrisisGuideSection";
+import KnowYourRightsSection from "@/components/KnowYourRightsSection";
+import IndustryGuidanceSection from "@/components/IndustryGuidanceSection";
+import FAQSection from "@/components/FAQSection";
+import ContactSection from "@/components/ContactSection";
+import SiteFooter from "@/components/SiteFooter";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
-  return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
-  );
-};
-
-const Index = PlaceholderIndex;
+const Index = () => (
+  <div className="min-h-screen bg-background">
+    <SiteHeader />
+    <main>
+      <HeroSection />
+      <CashFlowTrapSection />
+      <DebtTypesSection />
+      <SolutionsSection />
+      <CrisisGuideSection />
+      <KnowYourRightsSection />
+      <IndustryGuidanceSection />
+      <FAQSection />
+      <ContactSection />
+    </main>
+    <SiteFooter />
+  </div>
+);
 
 export default Index;
