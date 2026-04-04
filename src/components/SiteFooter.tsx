@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { categories } from "@/data/articles";
 
 const SiteFooter = () => (
@@ -6,7 +6,8 @@ const SiteFooter = () => (
     <div className="container-wide py-12">
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
-          <Link to="/" className="font-serif text-lg font-bold text-foreground">
+          <Link href="/" className="flex items-center gap-2 font-serif text-lg font-bold text-foreground">
+            <img src="/images/logo.png" alt="Business Debt Insider" className="h-7 w-auto" />
             Business Debt <span className="text-accent">Insider</span>
           </Link>
           <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
@@ -18,7 +19,7 @@ const SiteFooter = () => (
           <ul className="space-y-2">
             {categories.slice(0, 5).map((c) => (
               <li key={c.id}>
-                <Link to={`/category/${c.id}`} className="text-sm text-muted-foreground hover:text-accent transition-colors">
+                <Link href={`/category/${c.id}`} className="text-sm text-muted-foreground hover:text-accent transition-colors">
                   {c.label}
                 </Link>
               </li>
@@ -30,7 +31,7 @@ const SiteFooter = () => (
           <ul className="space-y-2">
             {categories.slice(5).map((c) => (
               <li key={c.id}>
-                <Link to={`/category/${c.id}`} className="text-sm text-muted-foreground hover:text-accent transition-colors">
+                <Link href={`/category/${c.id}`} className="text-sm text-muted-foreground hover:text-accent transition-colors">
                   {c.label}
                 </Link>
               </li>
@@ -40,10 +41,10 @@ const SiteFooter = () => (
         <div>
           <h4 className="font-sans font-semibold text-sm text-foreground mb-3">Resources</h4>
           <ul className="space-y-2">
-            <li><Link to="/start-here" className="text-sm text-muted-foreground hover:text-accent transition-colors">Start Here</Link></li>
-            <li><Link to="/glossary" className="text-sm text-muted-foreground hover:text-accent transition-colors">Glossary</Link></li>
-            <li><Link to="/categories" className="text-sm text-muted-foreground hover:text-accent transition-colors">All Categories</Link></li>
-            <li><Link to="/about" className="text-sm text-muted-foreground hover:text-accent transition-colors">About</Link></li>
+            <li><Link href="/start-here" className="text-sm text-muted-foreground hover:text-accent transition-colors">Start Here</Link></li>
+            <li><Link href="/glossary" className="text-sm text-muted-foreground hover:text-accent transition-colors">Glossary</Link></li>
+            <li><Link href="/categories" className="text-sm text-muted-foreground hover:text-accent transition-colors">All Categories</Link></li>
+            <li><Link href="/about" className="text-sm text-muted-foreground hover:text-accent transition-colors">About</Link></li>
           </ul>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Clock, Calendar } from "lucide-react";
 import { Article, getCategoryLabel } from "@/data/articles";
 
@@ -9,9 +9,19 @@ interface ArticleCardProps {
 
 const ArticleCard = ({ article, featured }: ArticleCardProps) => (
   <Link
-    to={`/article/${article.slug}`}
-    className={`block bg-card rounded-lg border border-border card-hover overflow-hidden ${featured ? "lg:flex" : ""}`}
+    href={`/article/${article.slug}`}
+    className={`block bg-card rounded-lg border border-border card-hover overflow-hidden ${featured ? "" : ""}`}
   >
+    {article.image && (
+      <div className={`overflow-hidden ${featured ? "h-48" : "h-40"}`}>
+        <img
+          src={article.image}
+          alt={article.title}
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+        />
+      </div>
+    )}
     <div className={`p-6 ${featured ? "lg:p-8" : ""}`}>
       <span className="category-tag mb-3 inline-block">{getCategoryLabel(article.category)}</span>
       <h3 className={`font-serif font-bold text-foreground leading-snug mb-2 ${featured ? "text-xl lg:text-2xl" : "text-lg"}`}>
