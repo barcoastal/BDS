@@ -45,10 +45,19 @@ const SiteFooter = () => (
             <li><Link href="/glossary" className="text-sm text-muted-foreground hover:text-accent transition-colors">Glossary</Link></li>
             <li><Link href="/categories" className="text-sm text-muted-foreground hover:text-accent transition-colors">All Categories</Link></li>
             <li><Link href="/about" className="text-sm text-muted-foreground hover:text-accent transition-colors">About</Link></li>
+            <li><a href="mailto:editorial@businessdebtinsider.com" className="text-sm text-muted-foreground hover:text-accent transition-colors">Contact</a></li>
           </ul>
         </div>
       </div>
-      <div className="mt-10 pt-6 border-t border-border">
+      <div className="mt-8 pt-5 border-t border-border">
+        <p className="text-[10px] text-muted-foreground/60 mb-3">
+          Sources we reference:{" "}
+          <a href="https://www.irs.gov" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">IRS.gov</a>{" · "}
+          <a href="https://www.uscourts.gov" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">USCourts.gov</a>{" · "}
+          <a href="https://www.sba.gov" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">SBA.gov</a>{" · "}
+          <a href="https://www.ftc.gov" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">FTC.gov</a>{" · "}
+          <a href="https://www.consumerfinance.gov" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">CFPB.gov</a>
+        </p>
         <p className="text-xs text-muted-foreground leading-relaxed">
           All content is for informational purposes only and does not constitute legal or financial advice. Consult qualified professionals for advice specific to your situation. © {new Date().getFullYear()} Business Debt Insider.
         </p>
