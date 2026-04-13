@@ -46,6 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <script src="https://click.coastaldebt.com/uniclick.js?attribution=lastpaid&cookiedomain=&cookieduration=90&defaultcampaignid=698b2a23db6eba2ec19d680c&regviewonce=false" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18087269418" />
         <script dangerouslySetInnerHTML={{ __html: `
           window.dataLayer = window.dataLayer || [];
