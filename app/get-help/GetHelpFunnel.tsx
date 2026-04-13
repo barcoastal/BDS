@@ -53,6 +53,10 @@ export default function GetHelpFunnel() {
       const v = params.get(k);
       if (v) captured[k] = v;
     }
+    // capture rtkclickid cookie
+    const rtkMatch = document.cookie.match(/(?:^|;\s*)rtkclickid-store=([^;]+)/);
+    if (rtkMatch) captured["rtkclickid"] = decodeURIComponent(rtkMatch[1]);
+
     if (Object.keys(captured).length) setTracking(captured);
   }, []);
 

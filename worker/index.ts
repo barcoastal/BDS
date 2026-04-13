@@ -75,12 +75,13 @@ async function handleSubmitLead(req: Request, env: Env): Promise<Response> {
   const ua = req.headers.get("user-agent") || "";
   const source = body.source || "get-help";
 
-  const TRACKING_KEYS = ["cmpid","utm_campaign","utm_source","sub2","sub3","sub4","sub5","sub6","sub7","sub8","sub9","sub10","wbraid","gbraid","ref_id"];
+  const TRACKING_KEYS = ["cmpid","utm_campaign","utm_source","sub2","sub3","sub4","sub5","sub6","sub7","sub8","sub9","sub10","wbraid","gbraid","ref_id","rtkclickid"];
   const tracking: Record<string, string> = {};
   for (const k of TRACKING_KEYS) {
     if (body[k] && typeof body[k] === "string") tracking[k] = body[k];
   }
   const trackingJson = Object.keys(tracking).length ? JSON.stringify(tracking) : null;
+  const rtkclickid = body.rtkclickid && typeof body.rtkclickid === "string" ? body.rtkclickid : null;
 
   const webhookRow = await env.DB.prepare("SELECT value FROM settings WHERE key = ?")
     .bind("webhook_url")
@@ -107,8 +108,8 @@ async function handleSubmitLead(req: Request, env: Env): Promise<Response> {
   }
 
   await env.DB.prepare(
-    `INSERT INTO leads (has_mca, debt_range, business_name, first_name, last_name, email, phone, source, user_agent, ip, webhook_status, tracking)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    `INSERT INTO leads (has_mca, debt_range, business_name, first_name, last_name, email, phone, source, user_agent, ip, webhook_status, tracking, rtkclickid)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
   )
     .bind(
       body.has_mca,
@@ -123,6 +124,7 @@ async function handleSubmitLead(req: Request, env: Env): Promise<Response> {
       ip,
       webhookStatus,
       trackingJson,
+      rtkclickid,
     )
     .run();
 
