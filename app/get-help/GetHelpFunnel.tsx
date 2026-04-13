@@ -364,6 +364,11 @@ function FunnelFooter() {
           </p>
         </div>
 
+        <div className="flex items-center justify-center gap-4 text-xs text-muted-foreground">
+          <a href="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</a>
+          <span>|</span>
+          <a href="/terms" className="hover:text-accent transition-colors">Terms of Service</a>
+        </div>
         <p className="text-xs text-muted-foreground">
           &copy; {new Date().getFullYear()} Business Debt Insider. Owned and operated by Albert Capital SRL (Romania). All rights reserved.
         </p>
