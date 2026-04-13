@@ -23,10 +23,10 @@ type HasMca = "yes" | "no";
 type DebtRange = "25-50k" | "50-100k" | "100-500k" | "500k-1m" | "over-1m";
 
 const DEBT_OPTIONS: { value: DebtRange; label: string }[] = [
-  { value: "25-50k", label: "$25,000 – $50,000" },
-  { value: "50-100k", label: "$50,000 – $100,000" },
-  { value: "100-500k", label: "$100,000 – $500,000" },
-  { value: "500k-1m", label: "$500,000 – $1,000,000" },
+  { value: "25-50k", label: "$25,000 to $50,000" },
+  { value: "50-100k", label: "$50,000 to $100,000" },
+  { value: "100-500k", label: "$100,000 to $500,000" },
+  { value: "500k-1m", label: "$500,000 to $1,000,000" },
   { value: "over-1m", label: "Over $1,000,000" },
 ];
 
@@ -180,7 +180,7 @@ function ContentSection() {
           <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
             If your business is drowning in <strong>MCA debt</strong>, business loans, or stacked
             advances, you're not out of options. Thousands of business owners have reduced
-            what they owe and stopped the daily ACH bleeding — without closing their doors.
+            what they owe and stopped the daily ACH bleeding without closing their doors.
           </p>
         </div>
 
@@ -188,19 +188,19 @@ function ContentSection() {
         <div className="grid md:grid-cols-2 gap-10 items-start">
           <div>
             <h3 className="font-serif text-2xl font-bold text-primary mb-3">
-              What Is an MCA — and Why Is It So Dangerous?
+              What Is an MCA and Why Is It So Dangerous?
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
               A Merchant Cash Advance (MCA) isn't a traditional loan. Funders buy a portion
-              of your future revenue and collect daily or weekly via ACH debits — regardless
-              of whether your business had a good week. Factor rates of 1.3x to 1.6x mean
+              of your future revenue and collect daily or weekly via ACH debits,
+              regardless of whether your business had a good week. Factor rates of 1.3x to 1.6x mean
               you could owe 50% more than you borrowed within months.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Most business owners stack multiple MCAs trying to cover the first one. That
               spiral is what our specialists are trained to stop. An <strong>MCA relief program</strong> can
-              restructure, settle, or legally challenge these obligations — often reducing
-              balances by 40–60%.
+              restructure, settle, or legally challenge these obligations, often reducing
+              balances by 40-60%.
             </p>
           </div>
           <div className="bg-stone-50 rounded-2xl p-6 border border-stone-200 space-y-4">
@@ -235,7 +235,7 @@ function ContentSection() {
             {[
               {
                 title: "Debt Settlement",
-                desc: "Negotiate directly with MCA funders to reduce the total balance — often 40–60% below what's owed. Best when you're behind on payments and funders prefer partial recovery over a default.",
+                desc: "Negotiate directly with MCA funders to reduce the total balance, often 40-60% below what's owed. Best when you're behind on payments and funders prefer partial recovery over a default.",
                 tag: "Most common",
               },
               {
@@ -267,13 +267,13 @@ function ContentSection() {
           </h3>
           <p className="text-muted-foreground leading-relaxed mb-4">
             While MCAs are our specialty, <strong>business debt relief</strong> covers a wide range
-            of obligations — SBA loans, revenue-based financing, equipment loans, business
+            of obligations: SBA loans, revenue-based financing, equipment loans, business
             credit cards, and supplier payables. Each requires a different approach.
           </p>
           <p className="text-muted-foreground leading-relaxed">
             Our network of specialists evaluates your full debt picture and identifies which
             obligations to prioritize, which to negotiate, and which can be legally
-            challenged. You get a clear, actionable plan — not generic advice.
+            challenged. You get a clear, actionable plan, not generic advice.
           </p>
         </div>
 
@@ -290,19 +290,19 @@ function ContentSection() {
               },
               {
                 q: "Can an MCA funder sue me?",
-                a: "Yes — especially if you signed a Confession of Judgment (COJ). Acting early, before a lawsuit is filed, gives you significantly more leverage in any negotiation or relief program.",
+                a: "Yes, especially if you signed a Confession of Judgment (COJ). Acting early, before a lawsuit is filed, gives you significantly more leverage in any negotiation or relief program.",
               },
               {
                 q: "How long does an MCA relief program take?",
-                a: "Initial hardship plans can stop ACH debits within days. Full settlement negotiations typically take 2–6 months depending on the number of funders and total balance.",
+                a: "Initial hardship plans can stop ACH debits within days. Full settlement negotiations typically take 2-6 months depending on the number of funders and total balance.",
               },
               {
                 q: "What if I have multiple MCAs?",
-                a: "Stacked MCAs are the most common situation we see. A coordinated settlement strategy negotiates with all funders simultaneously — preventing one funder from accelerating while others wait.",
+                a: "Stacked MCAs are the most common situation we see. A coordinated settlement strategy negotiates with all funders simultaneously, preventing one funder from accelerating while others wait.",
               },
               {
                 q: "Is this legitimate? Are MCA relief companies real?",
-                a: "Yes — licensed debt settlement agencies specialize in business debt and MCA negotiations. Always verify that any company you work with is licensed in your state and is transparent about fees upfront.",
+                a: "Yes, licensed debt settlement agencies specialize in business debt and MCA negotiations. Always verify that any company you work with is licensed in your state and is transparent about fees upfront.",
               },
             ].map((item, i) => (
               <div key={i} className="border-b border-stone-200 pb-6">
@@ -396,7 +396,7 @@ function SidePanel({ step, status, disqualified }: SidePanelProps) {
               <Star key={i} className="w-3.5 h-3.5 fill-current" />
             ))}
           </div>
-          <p className="text-xs text-stone-600 mt-1.5">— {content.testimonial.author}</p>
+          <p className="text-xs text-stone-600 mt-1.5">{content.testimonial.author}</p>
         </div>
       )}
     </aside>
@@ -418,7 +418,7 @@ function getSideContent(step: number, status: Status, disqualified: boolean): Si
       eyebrow: "What happens next",
       eyebrowIcon: <CheckCircle2 className="w-4 h-4" />,
       title: "A specialist will reach out within 24 hours",
-      body: "They'll review your situation privately, answer questions, and walk through your real options — no pressure, no obligation.",
+      body: "They'll review your situation privately, answer questions, and walk through your real options no pressure, no obligation.",
       testimonial: {
         quote: "I was skeptical. They called the next day, listened, and laid out three options I didn't know existed.",
         author: "Sarah K., e-commerce owner",
@@ -431,7 +431,7 @@ function getSideContent(step: number, status: Status, disqualified: boolean): Si
       eyebrow: "We focus on MCA debt",
       eyebrowIcon: <ShieldCheck className="w-4 h-4" />,
       title: "Our specialists work with MCA cases",
-      body: "If your situation changes — or you realize you do have MCA obligations — come back and we'll help.",
+      body: "If your situation changes or you realize you do have MCA obligations come back and we'll help.",
     };
   }
 
@@ -439,7 +439,7 @@ function getSideContent(step: number, status: Status, disqualified: boolean): Si
     return {
       eyebrow: "You're not alone",
       eyebrowIcon: <ShieldCheck className="w-4 h-4" />,
-      title: "MCAs are aggressive — but solvable",
+      title: "MCAs are aggressive but solvable",
       body: "Daily ACH draws can drain a healthy business in weeks. The good news: there are proven paths to stop the debits and reduce what you owe.",
       stats: [
         { icon: <Building2 className="w-4 h-4" />, value: "2,000+", label: "Businesses helped" },
@@ -456,10 +456,10 @@ function getSideContent(step: number, status: Status, disqualified: boolean): Si
     return {
       eyebrow: "Every case is different",
       eyebrowIcon: <TrendingDown className="w-4 h-4" />,
-      title: "No balance is too small — or too large",
+      title: "No balance is too small or too large",
       body: "We've helped businesses with $25k in stacked advances and businesses with $1M+ across multiple funders. The right strategy depends on your numbers.",
       stats: [
-        { icon: <TrendingDown className="w-4 h-4" />, value: "40–60%", label: "Typical reduction" },
+        { icon: <TrendingDown className="w-4 h-4" />, value: "40-60%", label: "Typical reduction" },
         { icon: <Clock className="w-4 h-4" />, value: "24 hrs", label: "Response time" },
       ],
     };
@@ -482,7 +482,7 @@ function getSideContent(step: number, status: Status, disqualified: boolean): Si
     eyebrow: "Almost done",
     eyebrowIcon: <CheckCircle2 className="w-4 h-4" />,
     title: "One quick call, no obligation",
-    body: "Your contact info lets a specialist reach out privately. You decide if it's a fit — there's no fee to talk, and no commitment to move forward.",
+    body: "Your contact info lets a specialist reach out privately. You decide if it's a fit there's no fee to talk, and no commitment to move forward.",
     stats: [
       { icon: <Clock className="w-4 h-4" />, value: "15 min", label: "First call" },
       { icon: <ShieldCheck className="w-4 h-4" />, value: "Free", label: "Always, no fees" },
@@ -729,7 +729,7 @@ function SuccessState() {
         <CheckCircle2 className="w-7 h-7" />
       </div>
       <h2 className="font-serif text-2xl font-bold text-primary mb-2">
-        Thanks — we got it.
+        Thanks we got it.
       </h2>
       <p className="text-muted-foreground max-w-sm mx-auto leading-relaxed">
         A debt-relief specialist will review your situation and reach out shortly
