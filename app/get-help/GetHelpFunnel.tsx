@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import {
@@ -43,6 +43,18 @@ export default function GetHelpFunnel() {
   const [phone, setPhone] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [tracking, setTracking] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    const TRACKING_KEYS = ["cmpid","utm_campaign","utm_source","sub2","sub3","sub4","sub5","sub6","sub7","sub8","sub9","sub10","wbraid","gbraid","ref_id"];
+    const params = new URLSearchParams(window.location.search);
+    const captured: Record<string, string> = {};
+    for (const k of TRACKING_KEYS) {
+      const v = params.get(k);
+      if (v) captured[k] = v;
+    }
+    if (Object.keys(captured).length) setTracking(captured);
+  }, []);
 
   const totalSteps = 4;
   const progress =
@@ -78,6 +90,7 @@ export default function GetHelpFunnel() {
           email: email.trim(),
           phone: phone.trim(),
           source: "get-help",
+          ...tracking,
         }),
       });
       if (!res.ok) {

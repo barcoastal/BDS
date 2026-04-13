@@ -11,7 +11,8 @@ CREATE TABLE IF NOT EXISTS leads (
   source TEXT,
   user_agent TEXT,
   ip TEXT,
-  webhook_status TEXT
+  webhook_status TEXT,
+  tracking TEXT
 );
 
 CREATE INDEX IF NOT EXISTS idx_leads_created ON leads(created_at DESC);
