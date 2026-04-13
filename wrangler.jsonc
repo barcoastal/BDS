@@ -1,6 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "bdi",
+  "account_id": "1b2eccaf2ac50c85565dbbc1fa38a035",
   "main": "worker/index.ts",
   "compatibility_date": "2026-04-04",
   "assets": {
