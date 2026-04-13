@@ -3,6 +3,8 @@ import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import DebtQuiz from "@/components/DebtQuiz";
+import ChromeGate from "@/components/ChromeGate";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Providers from "./providers";
@@ -48,10 +50,11 @@ export default function RootLayout({
           <TooltipProvider>
             <Toaster />
             <div className="min-h-screen flex flex-col bg-background">
-              <SiteHeader />
+              <ChromeGate><SiteHeader /></ChromeGate>
               <main className="flex-1">{children}</main>
-              <SiteFooter />
-              <DebtQuiz />
+              <ChromeGate><SiteFooter /></ChromeGate>
+              <ChromeGate><DebtQuiz /></ChromeGate>
+              <ExitIntentPopup />
             </div>
           </TooltipProvider>
         </Providers>

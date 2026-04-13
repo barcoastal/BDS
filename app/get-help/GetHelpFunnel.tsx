@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import {
@@ -14,6 +13,10 @@ import {
   Building2,
   DollarSign,
   User,
+  Quote,
+  TrendingDown,
+  Clock,
+  Star,
 } from "lucide-react";
 
 type HasMca = "yes" | "no";
@@ -89,23 +92,10 @@ export default function GetHelpFunnel() {
   };
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] bg-gradient-to-b from-stone-50 via-white to-amber-50/30">
-      <div className="max-w-2xl mx-auto px-5 py-10 sm:py-14">
-        <header className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-accent mb-3">
-            <ShieldCheck className="w-4 h-4" />
-            Free & Confidential
-          </div>
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-primary mb-3">
-            Get help with your business debt
-          </h1>
-          <p className="text-muted-foreground text-base leading-relaxed max-w-md mx-auto">
-            A few quick questions so we can point you in the right direction. Takes
-            under 2 minutes.
-          </p>
-        </header>
-
-        <div className="bg-white border border-stone-200 rounded-2xl shadow-sm overflow-hidden">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-stone-50 via-white to-amber-50/30">
+      <FunnelHeader />
+      <div className="flex-1 max-w-6xl w-full mx-auto px-5 py-10 sm:py-14 grid gap-8 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start">
+        <div className="bg-white border border-stone-200 rounded-2xl shadow-sm overflow-hidden lg:max-w-2xl w-full">
           <div className="px-6 pt-6">
             <Progress value={progress} className="h-1.5" />
             {status !== "success" && !disqualified && (
@@ -169,14 +159,195 @@ export default function GetHelpFunnel() {
           </div>
         </div>
 
-        <p className="text-center text-xs text-muted-foreground mt-6 max-w-md mx-auto leading-relaxed">
-          Business Debt Insider is an educational resource. Submitting this form does
-          not create an attorney-client relationship.
-        </p>
+        <SidePanel step={step} status={status} disqualified={disqualified} />
       </div>
+      <FunnelFooter />
     </div>
   );
 }
+
+function FunnelHeader() {
+  return (
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
+      <div className="container-wide flex items-center h-20">
+        <div className="flex items-center gap-3 font-serif text-xl lg:text-2xl font-bold tracking-tight text-foreground select-none">
+          <img src="/images/logo.png" alt="Business Debt Insider" className="h-14 lg:h-16 w-auto" draggable={false} />
+          <span className="hidden sm:inline">Business Debt <span className="text-accent">Insider</span></span>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+function FunnelFooter() {
+  return (
+    <footer className="border-t border-stone-200 bg-white">
+      <div className="max-w-6xl mx-auto px-5 py-8 space-y-3 text-center">
+        <p className="text-xs text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+          <strong className="text-stone-700">Disclosure:</strong> Business Debt Insider is an
+          educational resource. We collaborate with licensed debt settlement agencies
+          who may contact you regarding your submission. We may receive compensation
+          from partner agencies. Submitting this form does not create an
+          attorney-client relationship or guarantee any specific outcome.
+        </p>
+        <p className="text-xs text-muted-foreground">
+          © {new Date().getFullYear()} Business Debt Insider. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  );
+}
+
+interface SidePanelProps {
+  step: number;
+  status: Status;
+  disqualified: boolean;
+}
+
+function SidePanel({ step, status, disqualified }: SidePanelProps) {
+  const content = getSideContent(step, status, disqualified);
+  return (
+    <aside className="hidden lg:flex flex-col gap-5 lg:sticky lg:top-28">
+      <div className="rounded-2xl bg-white border border-stone-200 p-6 shadow-sm">
+        <div className="flex items-center gap-2 text-accent mb-3">
+          {content.eyebrowIcon}
+          <span className="text-[11px] font-semibold uppercase tracking-widest">
+            {content.eyebrow}
+          </span>
+        </div>
+        <h3 className="font-serif text-lg font-bold text-primary leading-snug mb-2">
+          {content.title}
+        </h3>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          {content.body}
+        </p>
+      </div>
+
+      {content.stats && (
+        <div className="rounded-2xl bg-white border border-stone-200 p-6 shadow-sm">
+          <div className="grid grid-cols-2 gap-4">
+            {content.stats.map((s, i) => (
+              <Stat key={i} icon={s.icon} value={s.value} label={s.label} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {content.testimonial && (
+        <div className="rounded-2xl bg-amber-50 border border-amber-200/70 p-6">
+          <Quote className="w-5 h-5 text-amber-600 mb-3" />
+          <p className="text-sm text-stone-800 leading-relaxed italic">
+            "{content.testimonial.quote}"
+          </p>
+          <div className="mt-4 flex items-center gap-1 text-amber-500">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star key={i} className="w-3.5 h-3.5 fill-current" />
+            ))}
+          </div>
+          <p className="text-xs text-stone-600 mt-1.5">— {content.testimonial.author}</p>
+        </div>
+      )}
+    </aside>
+  );
+}
+
+interface SideContent {
+  eyebrow: string;
+  eyebrowIcon: React.ReactNode;
+  title: string;
+  body: string;
+  stats?: { icon: React.ReactNode; value: string; label: string }[];
+  testimonial?: { quote: string; author: string };
+}
+
+function getSideContent(step: number, status: Status, disqualified: boolean): SideContent {
+  if (status === "success") {
+    return {
+      eyebrow: "What happens next",
+      eyebrowIcon: <CheckCircle2 className="w-4 h-4" />,
+      title: "A specialist will reach out within 24 hours",
+      body: "They'll review your situation privately, answer questions, and walk through your real options — no pressure, no obligation.",
+      testimonial: {
+        quote: "I was skeptical. They called the next day, listened, and laid out three options I didn't know existed.",
+        author: "Sarah K., e-commerce owner",
+      },
+    };
+  }
+
+  if (disqualified) {
+    return {
+      eyebrow: "We focus on MCA debt",
+      eyebrowIcon: <ShieldCheck className="w-4 h-4" />,
+      title: "Our specialists work with MCA cases",
+      body: "If your situation changes — or you realize you do have MCA obligations — come back and we'll help.",
+    };
+  }
+
+  if (step === 0) {
+    return {
+      eyebrow: "You're not alone",
+      eyebrowIcon: <ShieldCheck className="w-4 h-4" />,
+      title: "MCAs are aggressive — but solvable",
+      body: "Daily ACH draws can drain a healthy business in weeks. The good news: there are proven paths to stop the debits and reduce what you owe.",
+      stats: [
+        { icon: <Building2 className="w-4 h-4" />, value: "2,000+", label: "Businesses helped" },
+        { icon: <Lock className="w-4 h-4" />, value: "100%", label: "Confidential" },
+      ],
+      testimonial: {
+        quote: "The daily ACH draws were draining us. Within a week of reaching out, the payments stopped and we had a plan.",
+        author: "Marcus R., restaurant owner",
+      },
+    };
+  }
+
+  if (step === 1) {
+    return {
+      eyebrow: "Every case is different",
+      eyebrowIcon: <TrendingDown className="w-4 h-4" />,
+      title: "No balance is too small — or too large",
+      body: "We've helped businesses with $25k in stacked advances and businesses with $1M+ across multiple funders. The right strategy depends on your numbers.",
+      stats: [
+        { icon: <TrendingDown className="w-4 h-4" />, value: "40–60%", label: "Typical reduction" },
+        { icon: <Clock className="w-4 h-4" />, value: "24 hrs", label: "Response time" },
+      ],
+    };
+  }
+
+  if (step === 2) {
+    return {
+      eyebrow: "Privacy first",
+      eyebrowIcon: <Lock className="w-4 h-4" />,
+      title: "Your business details stay private",
+      body: "We use your business name to check public records and match you with a specialist who knows your industry. It's never shared or sold.",
+      testimonial: {
+        quote: "They understood the restaurant cash-flow cycle without me having to explain it. That alone saved hours.",
+        author: "Priya D., café owner",
+      },
+    };
+  }
+
+  return {
+    eyebrow: "Almost done",
+    eyebrowIcon: <CheckCircle2 className="w-4 h-4" />,
+    title: "One quick call, no obligation",
+    body: "Your contact info lets a specialist reach out privately. You decide if it's a fit — there's no fee to talk, and no commitment to move forward.",
+    stats: [
+      { icon: <Clock className="w-4 h-4" />, value: "15 min", label: "First call" },
+      { icon: <ShieldCheck className="w-4 h-4" />, value: "Free", label: "Always, no fees" },
+    ],
+  };
+}
+
+function Stat({ icon, value, label }: { icon: React.ReactNode; value: string; label: string }) {
+  return (
+    <div>
+      <div className="flex items-center gap-1.5 text-accent mb-1">{icon}</div>
+      <div className="font-serif text-xl font-bold text-primary leading-tight">{value}</div>
+      <div className="text-xs text-muted-foreground leading-snug mt-0.5">{label}</div>
+    </div>
+  );
+}
+
 
 function StepHeading({ icon, title, hint }: { icon: React.ReactNode; title: string; hint?: string }) {
   return (
@@ -410,16 +581,8 @@ function SuccessState() {
       </h2>
       <p className="text-muted-foreground max-w-sm mx-auto leading-relaxed">
         A debt-relief specialist will review your situation and reach out shortly
-        with the best options for your business.
+        with the best options for your business. Keep an eye on your phone and email.
       </p>
-      <div className="mt-6 flex items-center justify-center gap-3">
-        <Link href="/">
-          <Button variant="outline" size="sm">Back to home</Button>
-        </Link>
-        <Link href="/category/mca-debt">
-          <Button size="sm">Read about MCA relief <ArrowRight className="w-4 h-4 ml-1" /></Button>
-        </Link>
-      </div>
     </div>
   );
 }
@@ -435,16 +598,12 @@ function DisqualifiedState({ onBack }: { onBack: () => void }) {
       </h2>
       <p className="text-muted-foreground max-w-md mx-auto leading-relaxed mb-6">
         Our specialists focus on Merchant Cash Advance relief. Since you don't have
-        an MCA, we may not be the best fit — but our free guides can help you figure
-        out your next step.
+        an MCA, we may not be the best fit.
       </p>
-      <div className="flex items-center justify-center gap-3 flex-wrap">
+      <div className="flex items-center justify-center">
         <Button variant="outline" size="sm" onClick={onBack}>
           <ArrowLeft className="w-4 h-4 mr-1" /> Change answer
         </Button>
-        <Link href="/start-here">
-          <Button size="sm">Explore our guides <ArrowRight className="w-4 h-4 ml-1" /></Button>
-        </Link>
       </div>
     </div>
   );

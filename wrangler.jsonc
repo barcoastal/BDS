@@ -12,7 +12,7 @@
     {
       "binding": "DB",
       "database_name": "bdi-leads",
-      "database_id": "REPLACE_WITH_D1_ID"
+      "database_id": "67946f8c-a204-447c-9b2c-6f40772ff19a"
     }
   ],
   "vars": {}
