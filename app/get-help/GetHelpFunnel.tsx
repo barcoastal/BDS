@@ -161,8 +161,160 @@ export default function GetHelpFunnel() {
 
         <SidePanel step={step} status={status} disqualified={disqualified} />
       </div>
+      <ContentSection />
       <FunnelFooter />
     </div>
+  );
+}
+
+function ContentSection() {
+  return (
+    <section className="bg-white border-t border-stone-200 mt-4">
+      <div className="max-w-4xl mx-auto px-5 py-16 space-y-16">
+
+        {/* Hero copy */}
+        <div className="text-center">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-primary mb-4">
+            Business Debt Relief That Actually Works
+          </h2>
+          <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
+            If your business is drowning in <strong>MCA debt</strong>, business loans, or stacked
+            advances, you're not out of options. Thousands of business owners have reduced
+            what they owe and stopped the daily ACH bleeding — without closing their doors.
+          </p>
+        </div>
+
+        {/* What is MCA debt */}
+        <div className="grid md:grid-cols-2 gap-10 items-start">
+          <div>
+            <h3 className="font-serif text-2xl font-bold text-primary mb-3">
+              What Is an MCA — and Why Is It So Dangerous?
+            </h3>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              A Merchant Cash Advance (MCA) isn't a traditional loan. Funders buy a portion
+              of your future revenue and collect daily or weekly via ACH debits — regardless
+              of whether your business had a good week. Factor rates of 1.3x to 1.6x mean
+              you could owe 50% more than you borrowed within months.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Most business owners stack multiple MCAs trying to cover the first one. That
+              spiral is what our specialists are trained to stop. An <strong>MCA relief program</strong> can
+              restructure, settle, or legally challenge these obligations — often reducing
+              balances by 40–60%.
+            </p>
+          </div>
+          <div className="bg-stone-50 rounded-2xl p-6 border border-stone-200 space-y-4">
+            <p className="text-[11px] font-semibold uppercase tracking-widest text-accent">Warning signs you need MCA relief</p>
+            {[
+              "Daily ACH debits draining your cash before payroll",
+              "You've taken a second or third advance to cover the first",
+              "Factor rate above 1.3x on any current advance",
+              "Funders threatening a Confession of Judgment (COJ)",
+              "Bank account frozen or levied",
+              "Can't make payroll because of MCA draws",
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-3 text-sm text-foreground">
+                <span className="text-red-500 mt-0.5 flex-shrink-0">✕</span>
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* MCA relief program */}
+        <div>
+          <h3 className="font-serif text-2xl font-bold text-primary mb-3 text-center">
+            How an MCA Relief Program Works
+          </h3>
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-8">
+            <strong>MCA debt relief</strong> isn't one-size-fits-all. The right strategy depends on
+            how many advances you have, your current cash flow, and whether legal action has
+            started. Here are the three main paths:
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Debt Settlement",
+                desc: "Negotiate directly with MCA funders to reduce the total balance — often 40–60% below what's owed. Best when you're behind on payments and funders prefer partial recovery over a default.",
+                tag: "Most common",
+              },
+              {
+                title: "Structured Hardship Plan",
+                desc: "Pause or reduce daily ACH draws by demonstrating financial hardship. Buys time to stabilize cash flow while a longer-term plan is negotiated. No credit impact.",
+                tag: "Fastest to start",
+              },
+              {
+                title: "Subchapter V Bankruptcy",
+                desc: "A streamlined Chapter 11 reorganization that immediately stops all ACH debits, lawsuits, and levies via the automatic stay. Keeps your business open while restructuring debt.",
+                tag: "Legal protection",
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-white border border-stone-200 rounded-2xl p-6 shadow-sm">
+                <span className="inline-block px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest bg-accent/10 text-accent mb-3">
+                  {item.tag}
+                </span>
+                <h4 className="font-serif text-lg font-bold text-primary mb-2">{item.title}</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Business debt general */}
+        <div className="bg-stone-50 rounded-2xl p-8 border border-stone-200">
+          <h3 className="font-serif text-2xl font-bold text-primary mb-3">
+            Business Debt Relief Beyond MCAs
+          </h3>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            While MCAs are our specialty, <strong>business debt relief</strong> covers a wide range
+            of obligations — SBA loans, revenue-based financing, equipment loans, business
+            credit cards, and supplier payables. Each requires a different approach.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            Our network of specialists evaluates your full debt picture and identifies which
+            obligations to prioritize, which to negotiate, and which can be legally
+            challenged. You get a clear, actionable plan — not generic advice.
+          </p>
+        </div>
+
+        {/* FAQ */}
+        <div>
+          <h3 className="font-serif text-2xl font-bold text-primary mb-8 text-center">
+            Common Questions About MCA Debt Relief
+          </h3>
+          <div className="space-y-6 max-w-3xl mx-auto">
+            {[
+              {
+                q: "Will MCA debt relief hurt my credit?",
+                a: "MCAs are not reported to personal credit bureaus in most cases. Settling or restructuring MCA debt typically has no direct impact on your personal credit score.",
+              },
+              {
+                q: "Can an MCA funder sue me?",
+                a: "Yes — especially if you signed a Confession of Judgment (COJ). Acting early, before a lawsuit is filed, gives you significantly more leverage in any negotiation or relief program.",
+              },
+              {
+                q: "How long does an MCA relief program take?",
+                a: "Initial hardship plans can stop ACH debits within days. Full settlement negotiations typically take 2–6 months depending on the number of funders and total balance.",
+              },
+              {
+                q: "What if I have multiple MCAs?",
+                a: "Stacked MCAs are the most common situation we see. A coordinated settlement strategy negotiates with all funders simultaneously — preventing one funder from accelerating while others wait.",
+              },
+              {
+                q: "Is this legitimate? Are MCA relief companies real?",
+                a: "Yes — licensed debt settlement agencies specialize in business debt and MCA negotiations. Always verify that any company you work with is licensed in your state and is transparent about fees upfront.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="border-b border-stone-200 pb-6">
+                <h4 className="font-serif text-lg font-bold text-primary mb-2">{item.q}</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </section>
   );
 }
 
