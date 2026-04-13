@@ -334,16 +334,38 @@ function FunnelHeader() {
 function FunnelFooter() {
   return (
     <footer className="border-t border-stone-200 bg-white">
-      <div className="max-w-6xl mx-auto px-5 py-8 space-y-3 text-center">
-        <p className="text-xs text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-          <strong className="text-stone-700">Disclosure:</strong> Business Debt Insider is an
-          educational resource. We collaborate with licensed debt settlement agencies
-          who may contact you regarding your submission. We may receive compensation
-          from partner agencies. Submitting this form does not create an
-          attorney-client relationship or guarantee any specific outcome.
-        </p>
+      <div className="max-w-6xl mx-auto px-5 py-10 space-y-4 text-center">
+
+        <div className="bg-stone-50 border border-stone-200 rounded-xl px-6 py-5 max-w-4xl mx-auto text-left space-y-3">
+          <p className="text-[11px] font-semibold uppercase tracking-widest text-accent">How This Works</p>
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            Business Debt Insider works with a network of licensed and vetted debt settlement
+            agencies across the United States. When you submit this form, your information
+            (including your debt size and business location) is used to match you with the
+            agency best suited to help your specific situation. A representative from that
+            agency will contact you directly by phone or email with a personalized offer and
+            relief options. You are under no obligation to accept any offer presented to you.
+          </p>
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            <strong className="text-stone-700">Disclosure:</strong> Business Debt Insider is
+            an educational resource and lead referral platform. We are compensated by our
+            partner agencies when a referral is made. We do not provide legal, financial, or
+            debt settlement services directly. Submitting this form does not create an
+            attorney-client relationship and does not guarantee any specific outcome, debt
+            reduction amount, or relief program eligibility. Results vary based on individual
+            circumstances, lender cooperation, and applicable law.
+          </p>
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            This website is owned and operated by <strong className="text-stone-700">Albert Capital SRL</strong>,
+            a company incorporated in Romania. By submitting this form you agree to be
+            contacted by one or more of our partner agencies regarding your business debt
+            situation. Your information will only be shared with agencies within our vetted
+            network and will not be sold to third parties outside of that network.
+          </p>
+        </div>
+
         <p className="text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Business Debt Insider. All rights reserved.
+          &copy; {new Date().getFullYear()} Business Debt Insider. Owned and operated by Albert Capital SRL (Romania). All rights reserved.
         </p>
       </div>
     </footer>
