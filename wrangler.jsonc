@@ -1,8 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "bdi",
-  "account_id": "1b2eccaf2ac50c85565dbbc1fa38a035",
-  "main": "worker/index.ts",
+"main": "worker/index.ts",
   "compatibility_date": "2026-04-04",
   "assets": {
     "directory": "./out",
@@ -13,7 +12,7 @@
     {
       "binding": "DB",
       "database_name": "bdi-leads",
-      "database_id": "67946f8c-a204-447c-9b2c-6f40772ff19a"
+      "database_id": "9f839289-7297-44d2-8e5e-2b8ab0bfd1f3"
     }
   ],
   "vars": {}
