@@ -44,6 +44,7 @@ const SiteFooter = () => (
             <li><Link href="/start-here" className="text-sm text-muted-foreground hover:text-accent transition-colors">Start Here</Link></li>
             <li><Link href="/glossary" className="text-sm text-muted-foreground hover:text-accent transition-colors">Glossary</Link></li>
             <li><Link href="/categories" className="text-sm text-muted-foreground hover:text-accent transition-colors">All Categories</Link></li>
+            <li><Link href="/articles" className="text-sm text-muted-foreground hover:text-accent transition-colors">All Articles</Link></li>
             <li><Link href="/about" className="text-sm text-muted-foreground hover:text-accent transition-colors">About</Link></li>
             <li><a href="mailto:editorial@businessdebtinsider.com" className="text-sm text-muted-foreground hover:text-accent transition-colors">Contact</a></li>
           </ul>
