@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Privacy Policy for Business Debt Insider — how we collect, use, and protect your information.",
+  description: "Privacy Policy for TerraDebt — how we collect, use, and protect your information.",
   robots: { index: true, follow: true },
 };
 
@@ -18,14 +18,14 @@ export default function PrivacyPolicyPage() {
         <section>
           <h2 className="font-serif text-2xl font-bold text-primary mb-3">1. Who We Are</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Business Debt Insider is owned and operated by <strong>Albert Capital SRL</strong>, a company
+            TerraDebt is owned and operated by <strong>Albert Capital SRL</strong>, a company
             incorporated in Romania. We operate this website as an educational resource and lead
             referral platform connecting business owners with licensed debt settlement agencies in
             the United States. We do not provide debt settlement, legal, or financial advisory
             services directly.
           </p>
           <p className="text-muted-foreground leading-relaxed mt-3">
-            Contact: <a href="mailto:privacy@businessdebtinsider.com" className="text-accent hover:underline">privacy@businessdebtinsider.com</a>
+            Contact: <a href="mailto:privacy@terradebt.com" className="text-accent hover:underline">privacy@terradebt.com</a>
           </p>
         </section>
 
@@ -106,7 +106,7 @@ export default function PrivacyPolicyPage() {
           </ul>
           <p className="text-muted-foreground leading-relaxed mt-3">
             To exercise any of these rights, email us at{" "}
-            <a href="mailto:privacy@businessdebtinsider.com" className="text-accent hover:underline">privacy@businessdebtinsider.com</a>.
+            <a href="mailto:privacy@terradebt.com" className="text-accent hover:underline">privacy@terradebt.com</a>.
           </p>
         </section>
 

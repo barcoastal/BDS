@@ -9,8 +9,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Providers from "./providers";
 
-const SITE_NAME = "Business Debt Insider";
-const BASE_URL = "https://businessdebtinsider.com";
+const SITE_NAME = "TerraDebt";
+const BASE_URL = "https://terradebt.com";
 
 export const metadata: Metadata = {
   title: {

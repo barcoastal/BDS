@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "Terms of Service for Business Debt Insider.",
+  description: "Terms of Service for TerraDebt.",
   robots: { index: true, follow: true },
 };
 
@@ -18,7 +18,7 @@ export default function TermsPage() {
         <section>
           <h2 className="font-serif text-2xl font-bold text-primary mb-3">1. About This Website</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Business Debt Insider ("we," "us," "our") is owned and operated by{" "}
+            TerraDebt ("we," "us," "our") is owned and operated by{" "}
             <strong>Albert Capital SRL</strong>, a company incorporated in Romania. This website
             provides educational content about business debt relief options and operates as a
             lead referral platform connecting business owners with licensed debt settlement
@@ -35,7 +35,7 @@ export default function TermsPage() {
           <p className="text-muted-foreground leading-relaxed">
             All content on this website is for informational and educational purposes only.
             Nothing on this website constitutes legal advice, financial advice, or debt
-            settlement services. Business Debt Insider is not a law firm, debt settlement
+            settlement services. TerraDebt is not a law firm, debt settlement
             company, or licensed financial advisor.
           </p>
           <p className="text-muted-foreground leading-relaxed mt-3">
@@ -130,7 +130,7 @@ export default function TermsPage() {
           <h2 className="font-serif text-2xl font-bold text-primary mb-3">10. Contact</h2>
           <p className="text-muted-foreground leading-relaxed">
             For questions about these Terms, contact us at{" "}
-            <a href="mailto:legal@businessdebtinsider.com" className="text-accent hover:underline">legal@businessdebtinsider.com</a>.
+            <a href="mailto:legal@terradebt.com" className="text-accent hover:underline">legal@terradebt.com</a>.
           </p>
         </section>
 

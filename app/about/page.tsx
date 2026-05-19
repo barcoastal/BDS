@@ -3,9 +3,9 @@ import Link from "next/link";
 import { User, BookOpen, Scale, Calculator, Mail, ExternalLink, Shield, FileCheck } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Business Debt Insider | Our Team & Editorial Standards",
+  title: "About TerraDebt | Our Team & Editorial Standards",
   description:
-    "Learn about Business Debt Insider's editorial team, standards, and sources. We provide free, balanced, expert information on business debt, bankruptcy, and financial recovery.",
+    "Learn about TerraDebt's editorial team, standards, and sources. We provide free, balanced, expert information on business debt, bankruptcy, and financial recovery.",
   alternates: { canonical: "/about" },
 };
 
@@ -42,7 +42,7 @@ const sources = [
 export default function AboutPage() {
   return (
     <div className="container-narrow py-12">
-      <h1 className="font-serif text-3xl lg:text-4xl font-bold text-foreground mb-3">About Business Debt Insider</h1>
+      <h1 className="font-serif text-3xl lg:text-4xl font-bold text-foreground mb-3">About TerraDebt</h1>
       <p className="text-muted-foreground mb-10">Free, balanced, expert information for business owners facing debt.</p>
 
       <div className="space-y-14">
@@ -57,7 +57,7 @@ export default function AboutPage() {
               Business owners facing debt crises often struggle to find clear, unbiased information. Most online content is marketing for debt settlement companies or law firms. We believe business owners deserve better.
             </p>
             <p>
-              Business Debt Insider provides straightforward, thoroughly researched information that helps business owners understand their situation and make informed decisions. We cover risks AND opportunities. MCAs are expensive, but sometimes legitimate. Bankruptcy is powerful, but not always necessary.
+              TerraDebt provides straightforward, thoroughly researched information that helps business owners understand their situation and make informed decisions. We cover risks AND opportunities. MCAs are expensive, but sometimes legitimate. Bankruptcy is powerful, but not always necessary.
             </p>
             <p>
               <strong className="text-foreground">We are not a law firm, debt settlement company, or financial advisor.</strong> We don't sell services, and we don't accept paid placements. Our content is free and always will be.
@@ -100,7 +100,7 @@ export default function AboutPage() {
             <li className="flex items-start gap-2"><span className="text-accent mt-1 flex-shrink-0">&#10003;</span>When we mention specific companies in the debt relief space, we strive for balanced coverage</li>
             <li className="flex items-start gap-2"><span className="text-accent mt-1 flex-shrink-0">&#10003;</span>We update content when laws, regulations, or industry practices change</li>
             <li className="flex items-start gap-2"><span className="text-accent mt-1 flex-shrink-0">&#10003;</span>We encourage readers to consult multiple sources and qualified professionals</li>
-            <li className="flex items-start gap-2"><span className="text-accent mt-1 flex-shrink-0">&#10003;</span>If an article feels one-sided, <a href="mailto:editorial@businessdebtinsider.com" className="text-accent hover:underline">email us</a>. We want to get it right.</li>
+            <li className="flex items-start gap-2"><span className="text-accent mt-1 flex-shrink-0">&#10003;</span>If an article feels one-sided, <a href="mailto:editorial@terradebt.com" className="text-accent hover:underline">email us</a>. We want to get it right.</li>
           </ul>
         </section>
 
@@ -137,8 +137,8 @@ export default function AboutPage() {
             <p className="text-muted-foreground mb-3">
               For corrections, suggestions, press inquiries, or partnership requests:
             </p>
-            <a href="mailto:editorial@businessdebtinsider.com" className="text-accent font-semibold hover:underline">
-              editorial@businessdebtinsider.com
+            <a href="mailto:editorial@terradebt.com" className="text-accent font-semibold hover:underline">
+              editorial@terradebt.com
             </a>
             <p className="text-muted-foreground text-sm mt-3">We aim to respond within 48 hours. We take accuracy seriously and welcome factual corrections.</p>
           </div>

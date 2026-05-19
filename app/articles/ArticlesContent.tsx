@@ -7,7 +7,7 @@ const ArticlesContent = () => (
   <div className="container-wide py-12">
     <h1 className="font-serif text-3xl lg:text-4xl font-bold text-foreground mb-3">All Articles</h1>
     <p className="text-muted-foreground mb-10 max-w-2xl">
-      Every guide on Business Debt Insider, grouped by category. {articles.length} articles in total.
+      Every guide on TerraDebt, grouped by category. {articles.length} articles in total.
     </p>
     <div className="space-y-12">
       {categories.map((c) => {

@@ -340,7 +340,7 @@ function FunnelHeader() {
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container-wide flex items-center h-20">
         <div className="flex items-center gap-3 font-serif text-xl lg:text-2xl font-bold tracking-tight text-foreground select-none">
-          <img src="/images/logo.png" alt="Business Debt Insider" className="h-14 lg:h-16 w-auto" draggable={false} />
+          <img src="/images/logo.png" alt="TerraDebt" className="h-14 lg:h-16 w-auto" draggable={false} />
           <span className="hidden sm:inline">Business Debt <span className="text-accent">Insider</span></span>
         </div>
       </div>
@@ -356,7 +356,7 @@ function FunnelFooter() {
         <div className="bg-stone-50 border border-stone-200 rounded-xl px-6 py-5 max-w-4xl mx-auto text-left space-y-3">
           <p className="text-[11px] font-semibold uppercase tracking-widest text-accent">How This Works</p>
           <p className="text-xs text-muted-foreground leading-relaxed">
-            Business Debt Insider works with a network of licensed and vetted debt settlement
+            TerraDebt works with a network of licensed and vetted debt settlement
             agencies across the United States. When you submit this form, your information
             (including your debt size and business location) is used to match you with the
             agency best suited to help your specific situation. A representative from that
@@ -364,7 +364,7 @@ function FunnelFooter() {
             relief options. You are under no obligation to accept any offer presented to you.
           </p>
           <p className="text-xs text-muted-foreground leading-relaxed">
-            <strong className="text-stone-700">Disclosure:</strong> Business Debt Insider is
+            <strong className="text-stone-700">Disclosure:</strong> TerraDebt is
             an educational resource and lead referral platform. We are compensated by our
             partner agencies when a referral is made. We do not provide legal, financial, or
             debt settlement services directly. Submitting this form does not create an
@@ -387,7 +387,7 @@ function FunnelFooter() {
           <a href="/terms" className="hover:text-accent transition-colors">Terms of Service</a>
         </div>
         <p className="text-xs text-muted-foreground">
-          &copy; {new Date().getFullYear()} Business Debt Insider. Owned and operated by Albert Capital SRL (Romania). All rights reserved.
+          &copy; {new Date().getFullYear()} TerraDebt. Owned and operated by Albert Capital SRL (Romania). All rights reserved.
         </p>
       </div>
     </footer>

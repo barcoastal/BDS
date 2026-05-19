@@ -193,7 +193,7 @@ const HomeContent = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,26%,12%)] via-transparent to-[hsl(220,26%,12%)]" />
 
         <div className="hero-content relative z-10 text-center px-6 py-24 max-w-2xl mx-auto">
-          <p className="text-accent font-semibold tracking-[0.3em] uppercase text-xs sm:text-sm mb-6">Business Debt Insider</p>
+          <p className="text-accent font-semibold tracking-[0.3em] uppercase text-xs sm:text-sm mb-6">TerraDebt</p>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
             Navigate Your<br />Business Debt
           </h1>
@@ -222,7 +222,7 @@ const HomeContent = () => {
               SBA loans, equipment financing, tax debt, vendor credit, merchant cash advances. Each type has different rules, different risks, and different ways out.
             </p>
             <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-              We built Business Debt Insider so business owners get <strong className="text-foreground">free, honest, expert information</strong> about every option, from bankruptcy to negotiation to restructuring.
+              We built TerraDebt so business owners get <strong className="text-foreground">free, honest, expert information</strong> about every option, from bankruptcy to negotiation to restructuring.
             </p>
           </div>
         </div>

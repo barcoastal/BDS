@@ -7,7 +7,7 @@ const SiteFooter = () => (
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
           <Link href="/" className="flex items-center gap-2 font-serif text-lg font-bold text-foreground">
-            <img src="/images/logo.png" alt="Business Debt Insider" className="h-7 w-auto" />
+            <img src="/images/logo.png" alt="TerraDebt" className="h-7 w-auto" />
             Business Debt <span className="text-accent">Insider</span>
           </Link>
           <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
@@ -46,7 +46,7 @@ const SiteFooter = () => (
             <li><Link href="/categories" className="text-sm text-muted-foreground hover:text-accent transition-colors">All Categories</Link></li>
             <li><Link href="/articles" className="text-sm text-muted-foreground hover:text-accent transition-colors">All Articles</Link></li>
             <li><Link href="/about" className="text-sm text-muted-foreground hover:text-accent transition-colors">About</Link></li>
-            <li><a href="mailto:editorial@businessdebtinsider.com" className="text-sm text-muted-foreground hover:text-accent transition-colors">Contact</a></li>
+            <li><a href="mailto:editorial@terradebt.com" className="text-sm text-muted-foreground hover:text-accent transition-colors">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -60,7 +60,7 @@ const SiteFooter = () => (
           <a href="https://www.consumerfinance.gov" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">CFPB.gov</a>
         </p>
         <p className="text-xs text-muted-foreground leading-relaxed">
-          All content is for informational purposes only and does not constitute legal or financial advice. Consult qualified professionals for advice specific to your situation. © {new Date().getFullYear()} Business Debt Insider.
+          All content is for informational purposes only and does not constitute legal or financial advice. Consult qualified professionals for advice specific to your situation. © {new Date().getFullYear()} TerraDebt.
         </p>
       </div>
     </div>

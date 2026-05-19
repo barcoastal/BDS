@@ -43,7 +43,7 @@ export default function AdminLoginPage() {
           <Lock className="w-5 h-5" />
         </div>
         <h1 className="font-serif text-2xl font-bold text-primary mb-1">Admin sign in</h1>
-        <p className="text-sm text-muted-foreground mb-6">Business Debt Insider</p>
+        <p className="text-sm text-muted-foreground mb-6">TerraDebt</p>
 
         <label className="block mb-5">
           <span className="block text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-1.5">

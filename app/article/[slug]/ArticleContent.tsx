@@ -58,8 +58,8 @@ const ArticleContent = ({ slug }: { slug: string }) => {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://businessdebtinsider.com/" },
-              { "@type": "ListItem", position: 2, name: categoryLabel, item: `https://businessdebtinsider.com/category/${article.category}` },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://terradebt.com/" },
+              { "@type": "ListItem", position: 2, name: categoryLabel, item: `https://terradebt.com/category/${article.category}` },
               { "@type": "ListItem", position: 3, name: article.title },
             ],
           }),
@@ -75,9 +75,9 @@ const ArticleContent = ({ slug }: { slug: string }) => {
             description: article.excerpt,
             datePublished: article.date,
             author: { "@type": "Organization", name: article.author },
-            publisher: { "@type": "Organization", name: "Business Debt Insider" },
-            mainEntityOfPage: { "@type": "WebPage", "@id": `https://businessdebtinsider.com/article/${article.slug}` },
-            ...(article.image ? { image: `https://businessdebtinsider.com${article.image}` } : {}),
+            publisher: { "@type": "Organization", name: "TerraDebt" },
+            mainEntityOfPage: { "@type": "WebPage", "@id": `https://terradebt.com/article/${article.slug}` },
+            ...(article.image ? { image: `https://terradebt.com${article.image}` } : {}),
           }),
         }}
       />

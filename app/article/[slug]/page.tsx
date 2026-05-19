@@ -3,8 +3,8 @@ import { articles, getCategoryLabel } from "@/data/articles";
 import { notFound } from "next/navigation";
 import ArticleContent from "./ArticleContent";
 
-const SITE_NAME = "Business Debt Insider";
-const BASE_URL = "https://businessdebtinsider.com";
+const SITE_NAME = "TerraDebt";
+const BASE_URL = "https://terradebt.com";
 
 export async function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }));

@@ -80,7 +80,7 @@ const SiteHeader = () => {
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container-wide flex items-center justify-between h-20">
         <Link href="/" className="flex items-center gap-3 font-serif text-xl lg:text-2xl font-bold tracking-tight text-foreground">
-          <img src="/images/logo.png" alt="Business Debt Insider" className="h-14 lg:h-16 w-auto" />
+          <img src="/images/logo.png" alt="TerraDebt" className="h-14 lg:h-16 w-auto" />
           <span className="hidden sm:inline">Business Debt <span className="text-accent">Insider</span></span>
         </Link>
 
