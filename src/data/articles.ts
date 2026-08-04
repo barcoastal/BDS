@@ -15,6 +15,7 @@ export interface ArticleSection {
   heading: string;
   content: string;
   callout?: { type: "info" | "warning"; text: string };
+  related?: { label: string; href: string };
 }
 
 export type CategoryId =
@@ -343,7 +344,7 @@ export const articles: Article[] = [
     8, "2025-10-18", [
       { heading: "Why MCA Negotiation Is Different", content: "MCA companies aren't traditional lenders and don't follow traditional collection patterns. They have UCC liens, may have confessions of judgment, and are accustomed to aggressive collection. However, they also know that MCAs have high default rates and that their recovery through litigation is often poor.\n\nThe leverage in MCA negotiation comes from the funder's assessment of alternatives: if litigation will be expensive and recovery uncertain, settlement becomes attractive." },
       { heading: "Opening the Negotiation", content: "Before contacting the MCA company, prepare your position: compile documentation of your financial hardship, calculate total MCA payments already made versus the original advance amount, and determine what you can realistically afford in monthly payments.\n\nThe opening conversation should be direct: you cannot sustain the current daily debits, the alternative is default or bankruptcy (which would yield less recovery), and you're proposing a restructured payment plan that gives the funder a better outcome.", callout: { type: "warning", text: "Be prepared for the MCA company to threaten COJ enforcement or bank levies during negotiations. Having an attorney manage the negotiation reduces this risk." } },
-      { heading: "Negotiation Strategies", content: "Effective strategies include: offering a lump-sum settlement at a discount (typically 40–60% of the remaining balance), proposing extended monthly payments at a reduced total payoff, or consolidating multiple MCA positions into a single monthly payment.\n\nIf you've been paying for several months, calculate the total amount paid versus the original advance amount. Often, you've already repaid the principal and are now paying pure profit to the funder, this is a strong argument for settlement." },
+      { heading: "Negotiation Strategies", content: "Effective strategies include: offering a lump-sum settlement at a discount (typically 40–60% of the remaining balance), proposing extended monthly payments at a reduced total payoff, or consolidating multiple MCA positions into a single monthly payment.\n\nIf you've been paying for several months, calculate the total amount paid versus the original advance amount. Often, you've already repaid the principal and are now paying pure profit to the funder, this is a strong argument for settlement.", related: { label: "Comparing professional help? See independent rankings of MCA settlement firms at MCA Settlement Reviews", href: "https://www.mcasettlementreviews.com/best-mca-settlement-companies-2026" } },
     ]),
 
   a("lump-sum-vs-payment-plans", "Lump-Sum Settlement vs Extended Payment Plans: Which Strategy Wins", "debt-settlement",

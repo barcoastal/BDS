@@ -131,6 +131,18 @@ const ArticleContent = ({ slug }: { slug: string }) => {
                     {section.content.split("\n\n").map((p, i) => (
                       <p key={i}>{p}</p>
                     ))}
+                    {section.related && (
+                      <p className="text-sm">
+                        <a
+                          href={section.related.href}
+                          className="underline font-medium"
+                          target="_blank"
+                          rel="noopener"
+                        >
+                          {section.related.label} →
+                        </a>
+                      </p>
+                    )}
                     {section.callout && (
                       <div className={section.callout.type === "warning" ? "callout-warning" : "callout-info"}>
                         <p className="text-sm font-medium leading-relaxed !mb-0" style={{ color: "inherit" }}>
